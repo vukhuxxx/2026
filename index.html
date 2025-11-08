@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026ComingSoon</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Pattaya|Aleo|Righteous&display=swap);
+        body,
+        canvas,
+        html {
+            width: 100%;
+            height: 100%
+        }
+        
+        .content::after,
+        .content::before {
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block
+        }
+        
+        .content-box2 {
+            position: fixed;
+            top: -30px;
+            right: 5px;
+            transform: scaleX(-1);
+        }
+        
+         :root {
+            font-family: Righteous, sans-serif
+        }
+        
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            background: #770d0d;
+            background: radial-gradient(circle, rgba(119, 13, 13, .92) 64%, rgba(0, 0, 0, .6) 100%)
+        }
+        
+         ::-webkit-scrollbar {
+            display: none
+        }
+        
+        .label {
+            font-size: 2.2rem;
+            background: url("https://blog.azad.asia/2024/img/01.png") padding-box text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: 30s linear infinite moveBg
+        }
+        
+        @keyframes moveBg {
+            0% {
+                background-position: 0 30%
+            }
+            100% {
+                background-position: 1000% 500%
+            }
+        }
+        
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            user-select: none
+        }
+        
+        .time {
+            color: #d99c3b;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center
+        }
+        
+        .time span {
+            padding: 0 14px;
+            font-size: .8rem
+        }
+        
+        .time span div {
+            font-size: 3rem
+        }
+        
+        @media screen and (max-width:789px) {
+            .time span {
+                padding: 0 16px;
+                font-size: .6rem
+            }
+            .time span div {
+                font-size: 2rem
+            }
+        }
+        
+        .content-box1 {
+            position: fixed;
+            top: -30px;
+            left: 5px
+        }
+        
+        .content {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: rgba(216, 0, 15, .8);
+            border-radius: 50%;
+            -webkit-animation: 3s ease-in-out infinite swing;
+            box-shadow: -5px 5px 50px 4px #fa6c00
+        }
+        
+        .content::before {
+            position: absolute;
+            top: -7px;
+            left: 29px;
+            z-index: 999;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #dc8f03;
+            background: orange;
+            background: linear-gradient(to right, #dc8f03, orange, #dc8f03, orange, #dc8f03)
+        }
+        
+        .lantern {
+            position: absolute;
+            top: -20px;
+            left: 60px;
+            width: 2px;
+            height: 20px;
+            background: #dc8f03
+        }
+        
+        .content-a,
+        .content-b {
+            height: 90px;
+            background: rgba(216, 0, 15, .1)
+        }
+        
+        .content-a {
+            width: 100px;
+            margin: 12px 8px 8px 10px;
+            border-radius: 50%;
+            border: 2px solid #dc8f03
+        }
+        
+        .content-b {
+            width: 45px;
+            margin: -2px 8px 8px 26px;
+            border-radius: 50%;
+            border: 2px solid #dc8f03
+        }
+        
+        .content-t {
+            font-size: 1.5rem;
+            color: orange;
+            font-weight: 700;
+            line-height: 42px;
+            text-align: center;
+            width: 25px;
+            margin: 0 auto
+        }
+        
+        .lamp-a {
+            position: relative;
+            width: 5px;
+            height: 20px;
+            margin: -5px 0 0 59px;
+            -webkit-animation: 4s ease-in-out infinite swing;
+            -webkit-transform-origin: 50% -45px
+        }
+        
+        .lamp-b,
+        .lamp-c {
+            left: -2px;
+            width: 10px;
+            position: absolute
+        }
+        
+        .lamp-c {
+            top: 18px;
+            height: 35px;
+            background: orange;
+            border-radius: 0 0 0 5px
+        }
+        
+        .lamp-b {
+            top: 14px;
+            height: 10px;
+            background: #dc8f03;
+            border-radius: 50%
+        }
+    </style>
+</head>
+
+<body>
+    <div class="middle">
+        <h1 class="label">Còn Bao Nhiêu Ngày Đến Tết Âm?</h1>
+        <div class="time">
+            <span><div id="d">00</div> Ngày</span>
+            <span><div id="h">00</div> Giờ</span>
+            <span><div id="m">00</div> Phút</span>
+            <span><div id="s">00</div> Giây</span>
+        </div>
+    </div>
+
+    <div class="content-box1">
+        <div class="content">
+            <div class="lantern"></div>
+            <div class="content-a">
+                <div class="content-b">
+                    <div class="content-t"></div>
+                </div>
+            </div>
+            <div class="lamp lamp-a">
+                <div class="lamp-c"></div>
+                <div class="lamp-b"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-box2">
+        <div class="content">
+            <div class="lantern"></div>
+            <div class="content-a">
+                <div class="content-b">
+                    <div class="content-t"></div>
+                </div>
+            </div>
+            <div class="lamp lamp-a">
+                <div class="lamp-c"></div>
+                <div class="lamp-b"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center;width:90%;left:5%;bottom:10px;position:fixed;">
+        <font size="2">
+            <a href="https://vukhuxxx.github.io/profilex/" target="_blank" style="text-decoration: none;color:rgb(214, 214, 214)">Copyright By VuDinhKhu2025</a>
+        </font>
+    </div>
+
+    <script src="https://thanhdieu.com/thanhdieuft-data/js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        const tetDates = [{
+            year: 2025,
+            date: "Jan 29, 2025 00:00:00"
+        }, {
+            year: 2026,
+            date: "Feb 17, 2026 00:00:00"
+        }, {
+            year: 2027,
+            date: "Feb 6, 2027 00:00:00"
+        }, {
+            year: 2028,
+            date: "Jan 26, 2028 00:00:00"
+        }];
+
+        function getNextTet() {
+            const now = new Date();
+            for (let t of tetDates) {
+                const tetTime = new Date(t.date);
+                if (now.getTime() < tetTime.getTime()) return tetTime;
+            }
+            return new Date(tetDates[tetDates.length - 1].date);
+        }
+
+        const comingdate = getNextTet();
+        const d = document.getElementById("d");
+        const h = document.getElementById("h");
+        const m = document.getElementById("m");
+        const s = document.getElementById("s");
+
+        setInterval(() => {
+            const now = new Date();
+            const des = comingdate.getTime() - now.getTime();
+
+            const days = Math.floor(des / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((des % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((des % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((des % (1000 * 60)) / 1000);
+
+            d.innerHTML = days < 10 ? "0" + days : days;
+            h.innerHTML = hours < 10 ? "0" + hours : hours;
+            m.innerHTML = mins < 10 ? "0" + mins : mins;
+            s.innerHTML = secs < 10 ? "0" + secs : secs;
+        }, 1000);
+    </script>
+
+    <script>
+        class Snowflake {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * window.innerWidth;
+                this.y = Math.random() * -window.innerHeight;
+                this.vx = Math.random() * 6 - 3;
+                this.vy = Math.random() * 3 + 2;
+                this.radius = Math.random() * 3 + 1;
+                this.alpha = Math.random() * .8 + .1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.y > window.innerHeight) this.reset();
+            }
+        }
+        class Snow {
+            constructor() {
+                this.canvas = document.createElement("canvas");
+                this.ctx = this.canvas.getContext("2d");
+                document.body.appendChild(this.canvas);
+                window.addEventListener("resize", () => this.onResize());
+                this.onResize();
+                this.createSnowflakes();
+                requestAnimationFrame(this.update.bind(this));
+            }
+            onResize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            createSnowflakes() {
+                this.snowflakes = [];
+                const count = window.innerWidth / 4;
+                for (let i = 0; i < count; i++) this.snowflakes.push(new Snowflake());
+            }
+            update() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                for (let flake of this.snowflakes) {
+                    flake.update();
+                    this.ctx.beginPath();
+                    this.ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+                    this.ctx.fillStyle = "rgba(255,255,255," + flake.alpha + ")";
+                    this.ctx.fill();
+                }
+                requestAnimationFrame(this.update.bind(this));
+            }
+        }
+        new Snow();
+    </script>
+
+    <script>
+        var xyz_ = 0,
+            colors = ["#ff6651", "#42a5f5", "#66bb6a", "#ab47bc", "#ffa726", "#ec407a", "#26c6da", "#78909c", "#ffca28", "#5c6bc0", "#8d6e63", "#26a69a"];
+        jQuery(document).ready(function(a) {
+            a("body").click(function(o) {
+                var t = new Array("Năm mới vui vẻ", "Cung hỉ phát tài", "Tiền vô như nước", "Vợ đẹp con ngoan", "Tài lộc vào nhà", "Phúc thọ vô biên", "Sống khoẻ đón xuân", "Phú quý cát tường"),
+                    c = a("<span>").text(t[xyz_]),
+                    n = colors[Math.floor(Math.random() * colors.length)];
+                xyz_ = (xyz_ + 1) % t.length;
+                var x = o.pageX,
+                    y = o.pageY;
+                c.css({
+                    "z-index": 999999,
+                    top: y - 20,
+                    left: x,
+                    position: "absolute",
+                    "font-weight": "bold",
+                    color: n
+                });
+                a("body").append(c);
+                c.animate({
+                    top: y - 180,
+                    opacity: 0
+                }, 1500, function() {
+                    c.remove()
+                });
+            })
+        });
+    </script>
+
+</body>
+
+</html>
